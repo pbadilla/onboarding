@@ -1,0 +1,73 @@
+---
+title: Github
+description: Github steps
+---
+
+## Code Block
+
+```js
+console.log('Hello World');
+```
+
+## Github
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Pre, CodeBlock } from 'fumadocs-ui/components/codeblock';
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { Heading } from 'fumadocs-ui/components/heading';
+import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
+import { RollButton } from 'fumadocs-ui/components/roll-button';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Heading as="h1">Onboarding</Heading>
+
+<Cards>
+  <Accordions>
+    <Accordion title="Github">
+      <Card     
+        title="Home"
+        Description="Go back to home">
+        Content Card
+      </Card>
+      <Callout type="warn">Hello World</Callout>
+      <CodeBlock title="code">
+        ```tsx
+          <div>Hello World</div>  // [!code highlight]
+          <div>Hello World</div>
+          <div>Goodbye</div>
+          <div>Hello World</div>
+        ```
+      </CodeBlock>
+      <Files title="File tree">
+        <Folder name="app" defaultOpen>
+          <File name="layout.tsx" />
+          <File name="page.tsx" />
+          <File name="global.css" />
+        </Folder>
+        <Folder name="components">
+          <File name="button.tsx" />
+          <File name="tabs.tsx" />
+          <File name="dialog.tsx" />
+        </Folder>
+        <File name="package.json" />
+      </Files>
+    </Accordion>
+    <InlineTOC items={toc} />
+    {/* <RollButton /> */}
+    <Steps>
+      <Step>
+        ### Hello World
+      </Step>
+      <Step>
+        ### Hello World
+      </Step>
+      </Steps>
+  </Accordions>
+  <Tabs items={['Javascript', 'Rust']}>
+    <Tab value="Javascript">Javascript is weird</Tab>
+    <Tab value="Rust">Rust is fast</Tab>
+  </Tabs>
+</Cards>
